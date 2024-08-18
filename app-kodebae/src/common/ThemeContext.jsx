@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
 // Create a context to manage the theme state globally
 const ThemeContext = createContext();
@@ -20,7 +20,6 @@ export const ThemeProvider = ({ children }) => {
 
     // Function to toggle between 'light' and 'dark' theme
     const toggleTheme = () => {
-        console.log('theme button clicked')
         setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
     };
 

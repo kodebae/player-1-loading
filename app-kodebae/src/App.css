@@ -1,0 +1,123 @@
+/** Kodebae Branding colors*/
+/*? WHITE - FEFCFE */
+/*? PINK -  FF01FB */
+/*? PURPLE - 554161 */
+/*? BLUE -  4D4DFF */
+/*? YELLOW - FAFF00 */
+/*? BLACK - 001400 */
+
+:root {
+    --background-color: #FEFCFE;
+    --btn-color: #4D4DFF;
+    --btn-text-color: #fff;
+    --project-card-bg: #001400;
+    --text-color: #001400;
+    --form-text-color: #FF01FB;
+    --footer-text-color: #001400;
+  }
+  
+  [data-theme='dark'] {
+    --background-color: #001400;
+    --btn-color: #FEFCFE;
+    --btn-text-color: #001400;
+    --project-card-bg: #FEFCFE;
+    --text-color: #FEFCFE;
+    --form-text-color: #FEFCFE;
+    --footer-text-color: #4D4DFF;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 60px;
+  }
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  
+  h1,
+  h2,
+  h3,
+  p {
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 300 900;
+    font-display: swap;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2,
+  h3,
+  p {
+    font-family: 'Montagu Slab', serif;
+    font-style: normal;
+    font-weight: 200 700;
+    font-display: swap;
+  }
+  
+  h1,
+  h2 {
+    text-transform: uppercase;
+  }
+  
+  h2,
+  h3 {
+    font-size: 20px;
+  }
+  
+  h1 {
+    font-family: 'Figtree', sans-serif;
+    font-size: 60px;
+  }
+  
+  p {
+    font-size: 16px;
+    font-weight: 300;
+  }
+  
+  .sectionTitle {
+    margin-bottom: 30px;
+  }
+  
+  .hover {
+    cursor: pointer;
+  }
+  
+  @media (width >= 800px) {
+    #root {
+      gap: 100px;
+    }
+    h1 {
+      font-size: 40px;
+    }
+    h2,
+    h3 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 20px;
+    }
+  
+    .sectionTitle {
+      margin-bottom: 60px;
+    }
+  
+    @media (width >= 1400px) {
+      #root {
+        gap: 200px;
+      }
+      h1 {
+        font-size: 48px;
+      }
+  
+      .sectionTitle {
+        margin-bottom: 75px;
+      }
+    }
+  }
