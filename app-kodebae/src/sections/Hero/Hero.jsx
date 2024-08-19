@@ -1,4 +1,5 @@
-import styles from './Hero.jsx'
+import styles from '../Hero/HeroStyles.module.css'
+
 import heroImg from '../../assets/hero-img.png'
 import sun from '../../assets/sun.svg'
 import moon from '../../assets/moon.svg'
@@ -52,11 +53,11 @@ function Hero() {
               <img src={linkedinIcon} alt='LinkedIn logo'/>
             </a>
           </span>
-          <p>
+          <p className={styles.description}>
             Experienced software engineer with a strong focus on building high-performance applications to deliver impactful solutions.
           </p>
           <a href={Resume}>
-            <button className='hover' download>
+            <button className="hover">
               Resume
             </button>
           </a>
@@ -65,4 +66,4 @@ function Hero() {
   )
 }
 
-export default Hero
+export default Hero;
