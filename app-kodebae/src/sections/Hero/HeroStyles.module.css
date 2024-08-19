@@ -4,6 +4,7 @@
     justify-content: center;
     gap: 20px;
     text-align: center;
+    align-content: center;
     height: 100dvh;
     min-height: 500px;
   
@@ -15,12 +16,13 @@
       display: flex;
       gap: 25px;
       justify-content: center;
+      align-self: center;
   
       a {
         margin: 0;
   
         img {
-          width: 30px;
+          width: 50px;
         }
       }
     }
@@ -69,6 +71,7 @@
   }
   
   .description {
+    align-self: center;
     max-width: 24ch;
   }
   
