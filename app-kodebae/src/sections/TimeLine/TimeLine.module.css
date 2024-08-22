@@ -1,0 +1,121 @@
+/* Container for the timeline */
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dark-text {
+  color: black;
+  font-weight: 400;
+}
+
+ h4 {
+  font-size: 22px;
+ }
+/* Vertical line in the center of the timeline */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  border-left: 2px solid #544161; /* Use custom color */
+  top: 0;
+  transform: translateX(-50%);
+}
+
+/* Timeline items */
+.timeline-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Dot for each timeline item */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -6px; /* Adjust to ensure it aligns with the line */
+  width: 12px;
+  height: 12px;
+  background: #FF01FB; /* Use custom color */
+  border-radius: 50%;
+  top: 0;
+}
+
+/* Date section of each timeline item */
+.timeline-date {
+  font-size: 20px;
+  font-weight: 300;
+  color: #FF01FB; /* Use custom color */
+  margin-bottom: 5px;
+}
+
+/* Content section of each timeline item */
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  background: #FEFCFE; /* Use custom color */
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  margin: 10px;
+  width: calc(100% - 40px); /* Adjust width to account for padding */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for timeline content */
+.timeline-content:hover {
+  color: black;
+  background: #FAFF00; /* Use custom color */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+}
+
+/* Even items align content differently */
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Visible state for timeline items */
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .timeline-container::before {
+    display: none;
+  }
+
+  .timeline-item::before {
+    display: none;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .timeline-content {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 80%;
+  }
+}
+
+  
