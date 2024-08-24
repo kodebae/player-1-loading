@@ -15,7 +15,6 @@ function App() {
       <CareerTimeline />
       <Contact />
       <Footer />
-
     </>
   );
 }
