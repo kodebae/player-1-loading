@@ -54,7 +54,7 @@ function Hero() {
             </a>
           </span>
           <p className={styles.description}>
-            Experienced software engineer with a strong focus on building high-performance applications to deliver impactful solutions.
+            A dynamic software engineer with a passion for crafting high-performance applications that drive impactful solutions.
           </p>
           <a href={Resume}>
             <button className="hover">
