@@ -28,7 +28,7 @@ export const milestones = [
       description: "Built web scrapers with Python, revolutionizing data collection by addressing human interaction requirements.",
     },
     {
-      title: "Full-Stack Engineer Student",
+      title: "Full-Stack Dev Student",
       company: "Bloom Institute of Technology",
       location: "Remote",
       date: "April 2020",

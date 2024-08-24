@@ -1,5 +1,6 @@
 import styles from './ProjectStyles.module.css';
 import soon from '../../assets/coming-soon.png'
+import spacePic from '../../assets/space-station-proj.png'
 import ProjectCard from '../../common/ProjectCard';
 
 function Projects() {
@@ -8,10 +9,10 @@ function Projects() {
       <h1 className="sectionTitle">Projects</h1>
       <div className={styles.projectsContainer}>
         <ProjectCard
-          src={soon}
-          link=""
-          h3="Coming Soon"
-          p="WIP"
+          src={spacePic}
+          link="https://kodebae-iss-geo-location.netlify.app"
+          h3="ISS Mapper"
+          p="Space Station Tracker"
         />
         <ProjectCard
           src={soon}

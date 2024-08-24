@@ -4,7 +4,8 @@
     text-align: center;
   
     img {
-      max-width: 250px;
+      width: 200px;
+      height: 200px;
       align-self: center;
       border-radius: 20px;
      
