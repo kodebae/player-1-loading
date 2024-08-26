@@ -1,6 +1,6 @@
 import styles from './ProjectStyles.module.css';
 import soon from '../../assets/coming-soon.png'
-import spacePic from '../../assets/space-station-proj.png'
+import spacePic from '../../assets/space-station-proj.jpg'
 import ProjectCard from '../../common/ProjectCard';
 
 function Projects() {
