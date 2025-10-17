@@ -36,7 +36,7 @@ function PlayerCard() {
 
   const stats = [
     { name: 'Coding', value: 85, icon: '💻', color: '#ff6b9d' },
-    { name: 'Design', value: 75, icon: '🎨', color: '#00d9ff' },
+    { name: 'Design', value: 55, icon: '🎨', color: '#00d9ff' },
     { name: 'Game Dev', value: 5, icon: '🎮', color: '#b388ff' },
     { name: 'Creativity', value: 90, icon: '⚡', color: '#ffd700' },
   ];

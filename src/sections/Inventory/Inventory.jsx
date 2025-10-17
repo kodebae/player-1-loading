@@ -24,7 +24,7 @@ function Inventory() {
     // Game Dev Tools (NEW!)
     { name: 'Roblox Studio', type: 'Game Dev', rarity: 'legendary', icon: '🎮' },
     { name: 'Luau', type: 'Game Dev', rarity: 'rare', icon: '🌙' },
-    { name: 'Unity', type: 'Game Dev', rarity: 'legendary', icon: '🎯' },
+    { name: 'Unreal Engine', type: 'Game Dev', rarity: 'legendary', icon: '🎯' },
     
     // Database & Tools
     { name: 'SQL', type: 'Database', rarity: 'rare', icon: '🗄️' },
