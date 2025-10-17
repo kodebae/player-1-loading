@@ -5,11 +5,8 @@ import heroImg from '../../assets/hero-img.png';
 import sun from '../../assets/sun.svg';
 import moon from '../../assets/moon.svg';
 import twitterLight from '../../assets/twitter-light.svg';
-import twitterDark from '../../assets/twitter-dark.svg';
 import githubLight from '../../assets/github-light.svg';
-import githubDark from '../../assets/github-dark.svg';
 import linkedinLight from '../../assets/linkedin-light.svg';
-import linkedinDark from '../../assets/linkedin-dark.svg';
 import { useTheme } from '../../common/ThemeContext.jsx';
 import { calculatePlayerStats } from '../../data/playerProgress.js';
 
@@ -22,9 +19,10 @@ function PlayerCard() {
   const { currentLevel, totalXP, maxXP, rank, color: rankColor, level: displayLevel } = playerStats;
 
   const themeIcon = theme === 'light' ? sun : moon;
-  const twitterIcon = theme === 'light' ? twitterLight : twitterDark;
-  const githubIcon = theme === 'light' ? githubLight : githubDark;
-  const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
+  // Use light icons for both themes since dark mode has dark background
+  const twitterIcon = twitterLight;
+  const githubIcon = githubLight;
+  const linkedinIcon = linkedinLight;
 
   // Animate XP bar on mount
   useEffect(() => {

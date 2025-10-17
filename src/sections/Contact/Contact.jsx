@@ -4,16 +4,24 @@ import styles from './ContactStyles.module.css';
 
 function Contact() {
   const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
-  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+    
     if (!formEndpoint) {
-      e.preventDefault();
-      alert('Contact form is not configured yet. Please reach out via social media!');
+      // Fallback to mailto link
+      const subject = encodeURIComponent(`Player 1 Portfolio - Message from ${formData.name}`);
+      const body = encodeURIComponent(`From: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+      // TODO: Replace with your actual email address
+      window.location.href = `mailto:heykarmendurbin@gmail.com?subject=${subject}&body=${body}`;
       return;
     }
     // If endpoint exists, form will submit normally
-    setSubmitted(true);
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -46,6 +54,8 @@ function Contact() {
               id="name"
               placeholder="Enter your name..."
               className={styles.input}
+              value={formData.name}
+              onChange={handleChange}
               required
             />
           </div>
@@ -60,6 +70,8 @@ function Contact() {
               id="email"
               placeholder="your@email.com"
               className={styles.input}
+              value={formData.email}
+              onChange={handleChange}
               required
             />
           </div>
@@ -73,6 +85,8 @@ function Contact() {
               id="message"
               placeholder="Type your message here..."
               className={styles.textarea}
+              value={formData.message}
+              onChange={handleChange}
               required
             ></textarea>
           </div>

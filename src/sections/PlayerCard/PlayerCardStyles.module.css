@@ -294,6 +294,12 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: brightness(0) invert(1);
+  /* This makes SVGs white/bright regardless of original color */
+}
+
+.socialLinks a:hover img {
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px var(--accent-primary));
 }
 
 /* Stats Section */
