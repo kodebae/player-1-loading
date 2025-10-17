@@ -1,0 +1,136 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.subtitle {
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-top: -20px;
+  margin-bottom: 40px;
+}
+
+/* Category Tabs */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.categoryBtn {
+  padding: 12px 24px;
+  background: var(--inventory-item-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.categoryBtn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: 0 0 20px var(--glow-color);
+}
+
+.categoryBtn.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+  box-shadow: 0 0 20px var(--glow-color);
+}
+
+/* Inventory Grid */
+.inventoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+/* Summary Stats */
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  background: var(--card-bg);
+  border: 3px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 20px var(--glow-color);
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.summaryValue {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 32px;
+  color: var(--accent-primary);
+  text-shadow: 0 0 20px var(--glow-color);
+}
+
+.summaryLabel {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 20px;
+  }
+
+  .inventoryGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+  }
+
+  .categoryBtn {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .summary {
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .summaryValue {
+    font-size: 24px;
+  }
+
+  .summaryLabel {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .inventoryGrid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+

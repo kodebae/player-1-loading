@@ -1,0 +1,217 @@
+.itemCard {
+  position: relative;
+  aspect-ratio: 1;
+  background: var(--inventory-item-bg);
+  border: 3px solid var(--card-border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.itemCard:hover {
+  border-color: var(--rarity-color);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.6),
+    0 0 30px var(--rarity-glow),
+    inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Rarity Border Glow */
+.rarityBorder {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--rarity-color), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.itemCard:hover .rarityBorder {
+  opacity: 0.3;
+}
+
+/* Icon Container */
+.iconContainer {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-secondary);
+  border-radius: 10px;
+  border: 2px solid var(--card-border);
+  transition: all 0.3s ease;
+}
+
+.itemCard:hover .iconContainer {
+  border-color: var(--rarity-color);
+  box-shadow: 0 0 20px var(--rarity-glow);
+  transform: scale(1.1);
+}
+
+.icon {
+  font-size: 28px;
+  filter: drop-shadow(0 0 5px var(--rarity-glow));
+}
+
+/* Item Info */
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  width: 100%;
+}
+
+.itemName {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.itemMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 9px;
+  width: 100%;
+}
+
+.itemType {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text-secondary);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.itemRarity {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 7px;
+  font-weight: bold;
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background: var(--background-secondary);
+  border: 2px solid var(--rarity-color);
+  border-radius: 10px;
+  padding: 12px;
+  min-width: 200px;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.8),
+    0 0 30px var(--rarity-glow);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.itemCard:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--rarity-color);
+}
+
+.tooltipHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  gap: 8px;
+}
+
+.tooltipName {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-color);
+  text-transform: uppercase;
+  flex: 1;
+}
+
+.tooltipRarity {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 8px;
+  font-weight: bold;
+  text-shadow: 0 0 10px currentColor;
+  white-space: nowrap;
+}
+
+.tooltipType {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: var(--accent-secondary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tooltipDesc {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .itemCard {
+    padding: 12px;
+  }
+
+  .iconContainer {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon {
+    font-size: 24px;
+  }
+
+  .itemName {
+    font-size: 10px;
+  }
+
+  .tooltip {
+    min-width: 180px;
+    padding: 10px;
+  }
+}
+

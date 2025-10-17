@@ -1,0 +1,223 @@
+.questCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 3px solid var(--card-border);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 20px var(--glow-color);
+  position: relative;
+  text-decoration: none;
+  height: 100%;
+}
+
+.questCard::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 16px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.questCard:hover::before {
+  opacity: 0.3;
+}
+
+.questCard.noLink {
+  cursor: default;
+}
+
+/* Image Container */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: var(--background-secondary);
+}
+
+.questImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.questCard:hover .questImage {
+  transform: scale(1.1);
+}
+
+/* Progress Overlay */
+.progressOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 4px;
+  box-shadow: 0 0 10px var(--accent-primary);
+}
+
+.progressText {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Status Badge */
+.statusBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 8px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+/* Quest Info */
+.questInfo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.questTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  flex: 1;
+}
+
+.difficulty {
+  font-size: 18px;
+  line-height: 1;
+  text-shadow: 0 0 10px currentColor;
+}
+
+.description {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.tag {
+  padding: 4px 10px;
+  background: var(--inventory-item-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: var(--accent-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* XP Reward */
+.reward {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--card-border);
+}
+
+.xpIcon {
+  font-size: 20px;
+}
+
+.xpValue {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  color: var(--accent-primary);
+  text-shadow: 0 0 10px var(--glow-color);
+}
+
+/* Hover Effects */
+.questCard:hover {
+  box-shadow: 
+    0 12px 32px rgba(0, 0, 0, 0.6),
+    0 0 40px var(--glow-color);
+  border-color: var(--accent-primary);
+}
+
+@media (max-width: 480px) {
+  .imageContainer {
+    height: 180px;
+  }
+
+  .questTitle {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .questInfo {
+    padding: 16px;
+  }
+}
+
