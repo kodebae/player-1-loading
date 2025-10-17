@@ -141,7 +141,7 @@ function PlayerCard() {
               animate={{ opacity: 1 }}
               transition={{ delay: 1.1 }}
             >
-              Embarking on the indie game dev journey — building worlds, crafting mechanics, and leveling up one project at a time. 🎮✨
+              Embarking on the indie game dev journey building worlds, crafting mechanics, and leveling up one project at a time. 🎮✨
             </motion.p>
 
             {/* Social Links */}
